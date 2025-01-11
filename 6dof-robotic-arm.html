@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camilo Artigas</title>
+  <title>6 DOF Robotic Arm</title>
   <style>
     * {
       margin: 0;
@@ -54,7 +54,7 @@
 
     section img {
       width: 300px;
-      height: 300px;
+      height: 450px;
     }
 
     section p {
@@ -78,11 +78,19 @@
   </nav>
 
   <!-- section -->
-  <section id="home">
-    <h1>3-DOF Robotic Arm</h1>
-    <img src="assets/3dof-robotic-arm.png" alt="robot arm" />
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In enim metus, aliquet in est a, hendrerit dictum ex. Fusce venenatis mattis rutrum. Vivamus ultrices felis non urna mollis aliquet. Nulla mollis dolor at est molestie hendrerit. Aliquam nec nunc sed justo commodo pulvinar. Mauris eleifend massa non risus scelerisque tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>
-    <p>Pellentesque ac mauris ultrices, tempus sem quis, posuere est. Vestibulum sapien urna, vehicula nec commodo ac, suscipit sit amet odio. In sagittis mi suscipit nibh venenatis, a facilisis lacus feugiat. Nullam nulla erat, tristique non ante nec, iaculis porttitor lorem. Nullam consectetur, augue eget mattis elementum, tortor metus eleifend nibh, tempus efficitur dolor erat at magna. Cras euismod aliquam ullamcorper. Nunc molestie diam sed urna ornare, iaculis rhoncus eros molestie. Pellentesque id leo lacus. Ut arcu felis, iaculis eu posuere et, cursus sit amet dui. Nunc sed erat ac magna mattis hendrerit ac nec ipsum. Praesent egestas, sapien nec rutrum euismod, neque nunc tempus elit, non tristique nulla elit quis purus. Nulla bibendum vel nisi tempor eleifend. Donec eleifend ullamcorper quam, eget iaculis tellus finibus id. Praesent viverra sollicitudin lorem, non dictum tellus lacinia quis. Praesent dignissim non orci sed volutpat.</p>
+  <section id="6-dof-robotic-arm">
+    <h1>6-DOF Robotic Arm</h1>
+    <img src="assets/6dof-robotic-arm-2x3.png" alt="6-DOF Robotic Arm" />
+    <p>Design, manufacture, and program a 3-DOF robotic arm with the following objectives:</p>
+    <ul>
+      <li>Move its end effector in straight lines along x, y, and z axes</li>
+      <li>Be easily controllable</li>
+      <li>Grip and move objects within its workspace</li>
+      <li>Maintain end effector parallelism with the ground</li>
+    </ul>
+    <p><strong>How:</strong> Designed the robot and the base for electronics using SolidWorks and 3D printing with tight tolerances. Employed servo motors and a driver for motion, powered by a 6V battery. Used an Arduino board, inverse kinematics, C++ scripts, and a Python GUI for control. Ensured parallelism of the end effector with four-bar linkages.</p>
+    <p><strong>Why:</strong> Chose SolidWorks for its industry-standard use and versatility. Selected 3D printing for rapid prototyping. Used servo motors for straightforward position control and an Arduino for its extensive documentation. Employed a Python GUI for modularity and integrated four-bar linkages for their effectiveness in maintaining parallelism.</p>
+    <p><strong>Results:</strong> Achieved smooth linear movements to any point within the workspace, with reliable gripping and consistent performance. The four-bar linkages successfully maintained parallelism, facilitating efficient object manipulation.</p>
   </section>
 </body>
 </html>

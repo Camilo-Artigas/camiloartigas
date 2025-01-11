@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camilo Artigas</title>
+  <title>Angled Landing Gear</title>
   <style>
     * {
       margin: 0;
@@ -54,7 +54,6 @@
 
     section img {
       width: 300px;
-      height: 300px;
     }
 
     section p {
@@ -62,6 +61,18 @@
       font-family: 'Open Sans', sans-serif; /* Use Google Fonts or fallback */
       font-size: 1rem;
       line-height: 1.8; /* Increase spacing between lines */
+      max-width: 800px; /* Constrain the paragraph width */
+      margin: 1rem auto; /* Center-align horizontally */
+      padding: 0 1rem; /* Add padding for smaller screens */
+      color: #333; /* Darker text for better contrast */
+    }
+
+    section bp {
+      display: block;
+      text-align: left;
+      font-family: 'Open Sans', sans-serif; /* Use Google Fonts or fallback */
+      font-size: 1rem;
+      line-height: 0; /* Increase spacing between lines */
       max-width: 800px; /* Constrain the paragraph width */
       margin: 1rem auto; /* Center-align horizontally */
       padding: 0 1rem; /* Add padding for smaller screens */
@@ -77,12 +88,20 @@
     <a href="index.html#portfolio">Portfolio</a>
   </nav>
 
-  <!-- section -->
-  <section id="home">
-    <h1>3-DOF Robotic Arm</h1>
-    <img src="assets/3dof-robotic-arm.png" alt="robot arm" />
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In enim metus, aliquet in est a, hendrerit dictum ex. Fusce venenatis mattis rutrum. Vivamus ultrices felis non urna mollis aliquet. Nulla mollis dolor at est molestie hendrerit. Aliquam nec nunc sed justo commodo pulvinar. Mauris eleifend massa non risus scelerisque tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>
-    <p>Pellentesque ac mauris ultrices, tempus sem quis, posuere est. Vestibulum sapien urna, vehicula nec commodo ac, suscipit sit amet odio. In sagittis mi suscipit nibh venenatis, a facilisis lacus feugiat. Nullam nulla erat, tristique non ante nec, iaculis porttitor lorem. Nullam consectetur, augue eget mattis elementum, tortor metus eleifend nibh, tempus efficitur dolor erat at magna. Cras euismod aliquam ullamcorper. Nunc molestie diam sed urna ornare, iaculis rhoncus eros molestie. Pellentesque id leo lacus. Ut arcu felis, iaculis eu posuere et, cursus sit amet dui. Nunc sed erat ac magna mattis hendrerit ac nec ipsum. Praesent egestas, sapien nec rutrum euismod, neque nunc tempus elit, non tristique nulla elit quis purus. Nulla bibendum vel nisi tempor eleifend. Donec eleifend ullamcorper quam, eget iaculis tellus finibus id. Praesent viverra sollicitudin lorem, non dictum tellus lacinia quis. Praesent dignissim non orci sed volutpat.</p>
+
+  <section id="angled-landing-gear">
+    <h1>Angled Landing Gear</h1>
+    <img src="assets/angled-landing-gear-2x1.png" alt="Angled Landing Gear" />
+    <p>Designed the drone’s landing gear for the 2025 competition with the following features:</p>
+    <ul>
+      <li>Angled legs to ensure concentricity with a water retrieval bucket</li>
+      <li>Parametric and modular design for two payload configurations</li>
+      <li>Integration with existing machined components for cost and time efficiency</li>
+      <li>Key features like angled portions, carbon fiber members, anti-tipping bars, and depth limiters</li>
+    </ul>
+    <p><strong>How:</strong> Created parametric models in SolidWorks accessible for team collaboration. Used hand calculations to validate angles, structural strength, and integrity.</p>
+    <p><strong>Why:</strong> Leveraged parametric modeling and collaborative platforms for efficient design iterations. Implemented design choices like carbon fiber for rigidity, anti-tipping bars for stability, and depth limiters for precise bucket alignment.</p>
+    <p><strong>Results:</strong> Fully manufactured landing gear demonstrated stability, concentricity with the bucket, and reliability during flight tests, with anti-tipping bars saving the drone from tipping in three out of four flights.</p>
   </section>
 </body>
 </html>
