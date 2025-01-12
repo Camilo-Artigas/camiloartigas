@@ -85,6 +85,7 @@
       border-radius: 10px;
       grid-column: span var(--x,1fr);
       grid-row: span var(--y,1fr);
+      transition: transform 0.3s;
     }
 
     .portfolio-item img {
@@ -108,6 +109,10 @@
       font-size: 1.5rem;
       opacity: 0;
       transition: opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.03);
     }
 
     .portfolio-item:hover .overlay {
