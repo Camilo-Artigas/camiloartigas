@@ -35,7 +35,7 @@
 
     /* Header */
     header {
-      height: 100vh;
+      height: 65vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -113,6 +113,25 @@
     .portfolio-item:hover .overlay {
       opacity: 1;
     }
+
+    .resume-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+    .resume-link:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
   </style>
 </head>
 <body>
@@ -130,6 +149,8 @@
     <h3>I'm deeply passionate about robotics and tech.</h3>
     <h2> </h2>
     <img src="assets/profile-picture.jpg" alt="Profile Picture" />
+    <!-- Link to Resume -->
+    <a href="assets/Camilo_Artigas_Resume.pdf" target="_blank" class="resume-link">View My Resume</a>
   </header>
 
   <!-- Portfolio Section -->
