@@ -120,6 +120,7 @@
       grid-row: span var(--y, 1); /* Row span based on custom property */
       aspect-ratio: var(--x, 1) / var(--y, 1); /* Maintain aspect ratio of the box */
       width: 100%; /* Ensure width is 100% of the container */
+      transition: transform 0.3s;
 }
 
 
@@ -164,7 +165,7 @@
       color: white;
       font-size: 1.5rem;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s;
     }
 
     .portfolio-item:hover {
