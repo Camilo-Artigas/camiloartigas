@@ -155,10 +155,10 @@ a {
 .caption h3 {
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  font-variant: small-caps;
+  text-transform: uppercase; /* Real capitals; faked small caps looked like a different font */
   font-weight: normal;
   letter-spacing: 2px;
-  font-size: clamp(1.1rem, 1.6cqw, 1.8rem);
+  font-size: clamp(0.95rem, 1.3cqw, 1.5rem);
 }
 
 .caption p {
@@ -232,45 +232,93 @@ a {
   }
 }
 
-/* ---------- Project pages ---------- */
+/* ---------- Project pages ----------
+   One readable column like an article. See project-template.html for the
+   building blocks: subtitle, hero image, section headings, lists, galleries. */
 
 .project {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 16px 50px;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1rem 40px 60px;
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
+.project::after {
+  content: "";
+  display: block;
+  clear: both; /* Keep the page tall enough for a floated hero image */
+}
+
+/* Centered title, with a big grey subtitle under it */
 .project h1 {
+  text-align: center;
   font-size: 2.5rem;
   font-weight: normal;
-  margin: 1rem;
+  line-height: 1.2;
+  margin: 1rem 0 0.5rem;
 }
 
-.project h2 {
-  font-size: 1.1rem;
-  font-weight: normal;
-  font-style: italic;
-  color: var(--text-faint);
+/* Grey line under the title, e.g. "2025 | In Progress" */
+.project .project-sub {
   text-align: center;
+  font-size: 1.5rem;
+  color: #aaa;
+  margin-bottom: 1.5rem;
 }
 
-.project img {
-  max-width: 100%;
-  max-height: 450px;
-  margin: 1rem 0;
+/* Big image on the left; every paragraph, heading and list after it wraps
+   around it, then flows full width underneath */
+.project .hero {
+  float: left;
+  max-width: 50%;
+  max-height: 500px;
+  margin: 0.4rem 2rem 1rem 0;
 }
 
-.project p {
-  text-align: center;
-  font-size: 1rem;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 1rem auto;
-  color: var(--text-muted);
+.project h3 {
+  margin: 1.5rem 0 0.4rem;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.project p,
+.project ul {
+  margin-bottom: 1rem;
 }
 
 .project ul {
-  line-height: 1.8;
-  color: var(--text-muted);
+  display: flow-root; /* Keeps bullets clear of the hero image instead of overlapping it */
+  padding-left: 1.5rem;
+}
+
+.project a {
+  color: #08c;
+}
+/* Centered row of images; extra images wrap onto new lines */
+.gallery {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.gallery img {
+  max-width: 100%;
+  max-height: 400px;
+}
+
+@media (max-width: 600px) {
+  .project {
+    padding: 1rem 16px 40px;
+  }
+
+  .project .hero {
+    float: none;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 1rem;
+  }
 }
