@@ -4,237 +4,125 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Camilo Artigas</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      color: black;
-    }
-
-    /* Navbar */
-    nav {
-      background: black;
-      padding: 1rem;
-      text-align: left;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 1rem;
-      font-size: 1rem;
-    }
-
-    /* Header */
-    header {
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: white;
-      padding: 2rem;
-      gap: 1rem; /* Add consistent spacing */
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-
-    header h2, header h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-
-    header img {
-      width: 300px;
-      height: 300px;
-      max-width: 100%; /* Ensure responsiveness */
-      object-fit: cover;
-    }
-
-    .resume-link {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: black;
-      color: white;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s, transform 0.3s;
-      text-align: center;
-    }
-
-    .resume-link:hover {
-      background-color: #555;
-      transform: scale(1.05);
-    }
-
-    .styled-line {
-      border: none;
-      height: 4px;
-      background-color: black;
-      opacity: 0.2;
-      width: 80%;
-      max-width: 500px; /* Ensure consistent width on larger screens */
-      margin: 2rem auto; /* Centers the line and adds spacing */
-      border-radius: 5px;
-    }
-
-    /* Portfolio */
-    .portfolio-container {
-      background: white;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .portfolio-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(75px, 1fr)); /* Responsive columns */
-      gap: 1rem; /* Spacing between grid items */
-    }
-
-    .portfolio-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      grid-column: span var(--x, 1); /* Column span based on custom property */
-      grid-row: span var(--y, 1); /* Row span based on custom property */
-      aspect-ratio: var(--x, 1) / var(--y, 1); /* Maintain aspect ratio of the box */
-      width: 100%; /* Ensure width is 100% of the container */
-      transition: transform 0.3s;
-}
-
-
-    .portfolio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Maintain aspect ratio while covering the grid cell */
-      display: block;
-    }
-
-        /* Media Query for Smaller Screens (Mobile) */
-    @media (max-width: 768px) {
-      .portfolio {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Allow smaller columns */
-      }
-
-      .portfolio-item {
-        min-height: 200px; /* Ensure minimum height for each project */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .portfolio {
-        grid-template-columns: 1fr; /* Stack items in a single column for very small screens */
-      }
-
-      .portfolio-item {
-        min-height: 250px; /* Provide a bit more height for smaller screens */
-      }
-    }
-
-    .portfolio-item .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      opacity: 0;
-      transition: opacity 0.3s ease, transform 0.3s;
-    }
-
-    .portfolio-item:hover {
-      transform: scale(1.03);
-    }
-
-    .portfolio-item:hover .overlay {
-      opacity: 1;
-    }
-
-    
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#portfolio">Portfolio</a>
-  </nav>
-
-  <!-- Header -->
-  <header id="home">
-    <h1>Hi I'm Camilo.</h1>
-    <h2>Tinkerer turned engineer.</h2>
-    <h3>Specializing in Product Design and Hardware,</h3>
-    <h3>I'm deeply passionate about Robotics and Tech.</h3>
-    <h2> </h2>
-    <img src="assets/profile-picture.jpg" alt="Profile Picture" />
-    <!-- Link to Resume -->
-    <a href="assets/Camilo_Artigas_Resume.pdf" target="_blank" class="resume-link">View My Resume</a>
+  <header class="site-header">
+    <a href="index.html" class="site-name">Camilo Artigas</a>
+    <nav class="site-links">
+      <a href="assets/Camilo_Artigas_Resume.pdf" target="_blank">Resume</a>
+    </nav>
   </header>
 
-  <!-- Horizontal Line -->
-  <hr class="styled-line" />
+  <!--
+    Each <div class="row"> scales to fill the full width, and its tiles keep
+    their image's true shape, so nothing is cropped and both edges line up.
+    Fewer or narrower tiles make a taller row; more or wider tiles make a
+    shorter one. Keep each row's image ratios adding up to roughly 4-5
+    (e.g. 2x1 = 2, 3x2 = 1.5, 1x1 = 1) so the rows stay similar heights.
+  -->
+  <main class="projects">
+    <div class="grid">
 
-  <!-- Portfolio Section -->
-  <section class="portfolio-container" id="portfolio">
-    <h2 class="portfolio-title">Projects</h2>
-    <div class="portfolio">
+      <div class="row">
+        <div class="tile intro-tile" data-size="2x1">
+          <img class="intro-photo" src="assets/profile-picture.jpg" alt="Camilo Artigas" />
+          <div class="intro-text">
+            <h1>Hi, I'm Camilo.</h1>
+            <p>Tinkerer turned engineer.</p>
+            <p>Passionate about robotics and tech.</p>
+            <p>These are some of my projects.</p>
+          </div>
+        </div>
 
-      <div class="portfolio-item" style="--x: 4; --y: 6;">
-        <a href="6dof-robotic-arm.html">
-          <img src="assets\6dof-robotic-arm-2x3.jpg" alt="Item 1" />
-          <div class="overlay">6-DOF Robot Arm</div>
+        <a class="tile" href="zipline-ev3.html">
+          <img src="assets/docked-zip-3x2.png" alt="Docked Zipline EV3 drone" />
+          <div class="caption">
+            <h3>EV3 Drone Test Hardware</h3>
+            <p>Environmental chamber, vibration fixtures and test PCBs at Zipline</p>
+          </div>
+        </a>
+
+        <a class="tile" href="kodiak-sensor-cleaning.html">
+          <img src="assets/kodiak-pod-1x1.png" alt="Kodiak sensor pod" />
+          <div class="caption">
+            <h3>Sensor Cleaning System</h3>
+            <p>Liquid and air cleaning for an autonomous truck's LiDAR and cameras</p>
+          </div>
         </a>
       </div>
 
-      <div class="portfolio-item" style="--x: 3; --y: 3;">
-        <a href="cycloidal-actuator.html">
-          <img src="assets\cycloidal-actuator-1x1.png" alt="Item 2" />
-          <div class="overlay">Cycloidal Actuator</div>
+      <div class="row">
+        <a class="tile" href="injection-molder.html">
+          <img src="assets/injection-molder-assy-2x1.png" alt="Injection molder assembly" />
+          <div class="caption">
+            <h3>Injection Molder</h3>
+            <p>UWaterloo's first injection molder, built by a team I founded</p>
+          </div>
         </a>
-      </div>  
-      
-      <div class="portfolio-item" style="--x: 6; --y: 3;">
-        <a href="angled-landing-gear.html">
-          <img src="assets/angled-landing-gear-2x1.JPG" alt="Item 3" />
-          <div class="overlay">Angled Landing Gear</div>
+
+        <a class="tile" href="cycloidal-actuator.html">
+          <img src="assets/cycloidal-actuator-1x1.png" alt="Cycloidal Actuator" />
+          <div class="caption">
+            <h3>Cycloidal Actuator</h3>
+            <p>A zero-backlash cycloidal drive with generated gear profiles</p>
+          </div>
+        </a>
+
+        <a class="tile" href="inf-sustain-pedal.html">
+          <img src="assets/inf-sustain-pedal-pcb-1.7x1.png" alt="Infinite Sustain Pedal PCB" />
+          <div class="caption">
+            <h3>Infinite Sustain Pedal</h3>
+            <p>An analog guitar sustain pedal, from schematic to PCB</p>
+          </div>
         </a>
       </div>
 
-      <div class="portfolio-item" style="--x: 6; --y: 4;">
-        <a href="3dof-robotic-arm.html">
-          <img src="assets\3dof-robotic-arm-3x2.png" alt="Item 4" />
-          <div class="overlay">3-DOF Robot Arm</div>
+      <div class="row">
+        <a class="tile" href="6dof-robotic-arm.html">
+          <img src="assets/6dof-robotic-arm-2x3.jpg" alt="6-DOF Robotic Arm" />
+          <div class="caption">
+            <h3>6-DOF Robotic Arm</h3>
+            <p>A six-axis arm with custom actuators and gripper, in development</p>
+          </div>
+        </a>
+
+        <a class="tile" href="3dof-robotic-arm.html">
+          <img src="assets/3dof-robotic-arm-3x2.png" alt="3-DOF Robotic Arm" />
+          <div class="caption">
+            <h3>3-DOF Robotic Arm</h3>
+            <p>A servo arm driven by inverse kinematics and a Python GUI</p>
+          </div>
+        </a>
+
+        <a class="tile" href="angled-landing-gear.html">
+          <img src="assets/angled-landing-gear-2x1.JPG" alt="Angled Landing Gear" />
+          <div class="caption">
+            <h3>Angled Landing Gear</h3>
+            <p>Carbon fiber landing gear for a competition drone</p>
+          </div>
         </a>
       </div>
 
     </div>
-  </section>
+  </main>
+
+  <footer class="site-footer">© 2026 Camilo Artigas</footer>
+
+  <script>
+    // Give each tile its image's width/height ratio. The filename ("arm-2x3.jpg")
+    // or data-size sets it right away; once the image loads, its real size wins,
+    // so a slightly-off filename never leaves blank space.
+    document.querySelectorAll(".tile").forEach(tile => {
+      const name = tile.dataset.size || tile.querySelector("img").getAttribute("src");
+      const [, x = 1, y = 1] = name.match(/(\d+(?:\.\d+)?)x(\d+(?:\.\d+)?)(\.\w+)?$/) || [];
+      tile.style.setProperty("--r", x / y);
+
+      const img = tile.querySelector(":scope > img:not(.intro-photo)");
+      if (!img) return;
+      const useRealSize = () => tile.style.setProperty("--r", img.naturalWidth / img.naturalHeight);
+      img.complete && img.naturalWidth ? useRealSize() : img.addEventListener("load", useRealSize);
+    });
+  </script>
 </body>
 </html>
