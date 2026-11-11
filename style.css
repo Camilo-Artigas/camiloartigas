@@ -9,12 +9,20 @@
   --text: black;
   --text-muted: #333;
   --text-faint: #666;
+  --divider: #1b1b1d;     /* Lines between projects */
+  --divider-width: 4px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  /* Stop phone browsers from enlarging text differently on text-heavy pages */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -69,11 +77,20 @@ a {
   padding: 0 50px;
 }
 
-/* Justified rows with no gaps: each tile grows in proportion to its image's
-   ratio (--r), so every tile in a row is the same height and the row fills
-   the full width. Both edges line up and nothing is cropped. */
+/* Justified rows: each tile grows in proportion to its image's ratio (--r),
+   so every tile in a row is the same height and the row fills the full
+   width. Both edges line up and nothing is cropped. The thin gaps show the
+   grid's dark background, drawing a line between projects. */
+.grid,
 .row {
   display: flex;
+  gap: var(--divider-width);
+  background: var(--divider);
+}
+
+.grid {
+  flex-direction: column;
+  border: var(--divider-width) solid var(--divider); /* Same line around the outside */
 }
 
 .tile {
@@ -109,15 +126,16 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.6cqw;
-  padding: 1.5cqw;
-  font-size: clamp(0.8rem, 1.35cqw, 1.5rem);
-  line-height: 1.3;
+  gap: 1.4cqw;
+  padding: 2cqw 2.2cqw;
+  font-size: clamp(0.8rem, 1.3cqw, 1.5rem);
+  line-height: 1.55;
 }
 
 .intro-text h1 {
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: normal;
+  line-height: 1.2;
 }
 
 /* Hover caption: title above the line, description below */
@@ -177,6 +195,8 @@ a {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background: none; /* Stacked projects are separated by space instead */
+    border: none;
   }
 
   .tile {
