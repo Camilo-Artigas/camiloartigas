@@ -234,7 +234,7 @@ a {
 
 /* ---------- Project pages ----------
    One readable column like an article. See project-template.html for the
-   building blocks: subtitle, hero image, section headings, lists, galleries. */
+   building blocks: subtitle, images, section headings, lists, galleries. */
 
 .project {
   max-width: 850px;
@@ -247,7 +247,7 @@ a {
 .project::after {
   content: "";
   display: block;
-  clear: both; /* Keep the page tall enough for a floated hero image */
+  clear: both; /* Keep the page tall enough for a floated image */
 }
 
 /* Centered title, with a big grey subtitle under it */
@@ -267,13 +267,32 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* Big image on the left; every paragraph, heading and list after it wraps
-   around it, then flows full width underneath */
-.project .hero {
-  float: left;
+/* Images: three classes
+   img-left / img-right: sits on that side; the text after it wraps around it
+   img-wide: full column width, centered, nothing wraps beside it */
+.project .img-left,
+.project .img-right {
   max-width: 50%;
   max-height: 500px;
-  margin: 0.4rem 2rem 1rem 0;
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.project .img-left {
+  float: left;
+  margin-right: 2rem;
+}
+
+.project .img-right {
+  float: right;
+  margin-left: 2rem;
+}
+
+.project .img-wide {
+  clear: both;
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0;
 }
 
 .project h3 {
@@ -288,7 +307,7 @@ a {
 }
 
 .project ul {
-  display: flow-root; /* Keeps bullets clear of the hero image instead of overlapping it */
+  display: flow-root; /* Keeps bullets clear of a side image instead of overlapping it */
   padding-left: 1.5rem;
 }
 
@@ -315,7 +334,8 @@ a {
     padding: 1rem 16px 40px;
   }
 
-  .project .hero {
+  .project .img-left,
+  .project .img-right {
     float: none;
     display: block;
     max-width: 100%;

@@ -14,27 +14,27 @@
     </nav>
   </header>
 
-  <!-- To edit: copy blocks from project-template.html (subtitle, hero image, h3 sections, lists, galleries). -->
+  <!-- To edit: copy blocks from project-template.html (subtitle, images, h3 sections, lists, galleries). -->
   <article class="project">
     <h1>Hardware at Zipline</h1>
     <p class="project-sub">From building a 65°C 85% RH environmental chamber to designing motor controllers and bit error rate testers</p>
 
-    <img class="hero" src="assets/docked-zip-3x2.png" alt="Docked Zipline EV3 drone" />
-    <p>Owned multiple test legs for the EV3 drone during my first internship at Zipline, bringing up testers such as:</p>
-    <ul>
-      <li>An environmental chamber that holds 65 &deg;C and 85% RH for 30 days with two drones and docks inside</li>
-      <li>A test motor control PCB and 2 battery testing PCBs</li>
-      <li>A 30,000 RPM motor rotor tester to validate magnet epoxy strength</li>
-      <li>A full drone vibration fixture with a first mode beyond 500 Hz</li>
-    </ul>
+    <img class="img-left" src="assets/docked-zip-3x2.png" alt="Docked Zipline EV3 drone" />
+    <p>Over my two internships at Zipline, I had the opportunity to get involved in various projects within different teams. Let's start with my first internship:</p>
 
-    <h3>Environmental Chamber</h3>
-    <p>Retrofitted a shipping container into an environmental chamber for accelerated testing of the full aircraft, droid and dock. Integrated an Arduino Opta and 8 RS-485 sensors to actuate heaters and misters through relay closed-loop control. Wrote multi-threaded C++ firmware for real-time control over RS-485 and a UART Python dashboard for data visualization, tuning duty cycles and tolerances to hold conditions for 30 days.</p>
+    <h3>Mechatronics @ Powertrain</h3>
+    <p>As a mechatronics engineering intern in the powertrain test team, I got to work on battery, motor and even system level test projects. These projects were:</p>
+    <p></p>
 
-    <h3>Vibration and Battery Testing</h3>
-    <p>Owned an EV3 battery test campaign by designing 2 PCBs in Altium and a 2000 Hz first-mode vibration fixture in NX. Designed a full aircraft vibration fixture in NX for busbar testing, using modal analysis to push the first modal frequency beyond 500 Hz for launch-critical validation.</p>
+    <h3>Shipping Container → Environmental Chamber</h3>
+    <p>My first project was to turn a regular shipping container into an inhouse environmental chamber that could hold 65°C 85% RH for at least a month. </p>
+    <img class="img-wide" src="assets/zipline-chamber-8x3.png" alt="MTS Schematic" />
 
     <h3>Motor Rotor Tester</h3>
+    <p>Designed a tester in NX that spins rotors past 30,000 RPM through a 1:5 belt drive reduction to validate magnet epoxy strength.</p>
+
+
+    <h3>Component Vibration Testing</h3>
     <p>Designed a tester in NX that spins rotors past 30,000 RPM through a 1:5 belt drive reduction to validate magnet epoxy strength.</p>
   </article>
 </body>
